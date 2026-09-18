@@ -1,0 +1,16 @@
+# Vídeos e gravações do Webots (devem ser entregues separadamente, se pesados)
+*.mp4
+*.avi
+*.m4v
+
+# Arquivos de cache e temporários do Webots
+.webots-bin/
+*.pbf
+
+# Arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
