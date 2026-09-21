@@ -7,24 +7,32 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.0966682165818312 0.0963089099966636 0.9906461778849918 1.583946373389851
-  position 0.11255759738819741 -1.0255716268750945 0.31310482867536243
+  orientation -0.32190436028524155 0.28867312911624743 0.9016903056790528 1.7816683826494297
+  position 0.07824976233748532 -0.9373613413963789 0.9054063841376
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
+  floorTileSize 1 1
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "../pista.png"
+      ]
+    }
+  }
 }
 Robot {
-  translation -8.601005427467605e-11 -7.250188598928814e-12 -5.92433641201104e-05
-  rotation -0.9999999771104015 7.258273271629597e-07 -0.000213959505510793 5.280807355993151e-07
+  translation -0.3724035385633781 1.4256086211601314e-09 0.044991783892603235
+  rotation 9.195983304641259e-09 -1 -1.1260510911249564e-08 -2.498540109413594
   children [
     Pose {
       children [
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.0915608805978193e-07
+            position -402.46165509232077
             axis 0 1 0
             anchor 0 0 0.025
           }
@@ -36,8 +44,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 8.870282036084422e-10 -2.1552346256563054e-09 -1.5680456226865869e-06
-            rotation -0.8701533532483076 -0.4927810282780027 1.8852141981059494e-08 9.424321830774485e-08
+            translation 0.008285715860887971 -2.155234625656306e-09 0.0014113307409567531
+            rotation -2.404555933158646e-07 -0.9999999999999702 -4.100301542262059e-08 0.33779537011242594
             children [
               DEF RodaE Pose {
                 translation 0 0.055 0.025
@@ -61,11 +69,13 @@ Robot {
             physics Physics {
               mass 0.05
             }
+            linearVelocity 9.591301146559254e-05 -2.0409792215733867e-15 3.5636160298230434e-08
+            angularVelocity -4.42448285276519e-11 0.0038365956501317713 1.9109126613249123e-10
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -1.0913520535777648e-07
+            position -402.4616550920747
             axis 0 1 0
             anchor 0 0 0.025
           }
@@ -77,8 +87,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 8.865061203990233e-10 2.156890836602252e-09 -1.5680456226380146e-06
-            rotation 0.8702254397011621 -0.4926537162114163 -1.8946815297692623e-08 9.424321830774485e-08
+            translation 0.008285715855083385 2.1568908366022527e-09 0.001411330738917891
+            rotation 2.4047551364840396e-07 -0.9999999999999702 4.100641222709564e-08 0.33779536987523523
             children [
               DEF RodaD Pose {
                 translation 0 -0.055 0.025
@@ -104,6 +114,8 @@ Robot {
               density -1
               mass 0.05
             }
+            linearVelocity 9.591300493868404e-05 2.72198958283911e-13 3.5627121697245667e-08
+            angularVelocity 3.339942328414391e-11 0.0038365956498061355 -1.1082937134273422e-10
           }
         }
         DEF Corpo Pose {
@@ -156,4 +168,6 @@ Robot {
     mass 0.05
   }
   controller "car_control"
+  linearVelocity 0.019978027930573117 2.346618992756313e-10 0.015412696104610877
+  angularVelocity -2.332357821122068e-08 1.0038365957397188 1.481115794733046e-08
 }
