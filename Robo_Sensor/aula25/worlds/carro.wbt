@@ -19,7 +19,7 @@ RectangleArena {
   floorAppearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "../pista.png"
+        "https://raw.githubusercontent.com/cc24140/Seguidor-de-Linha-Webots/refs/heads/main/Robo_Sensor/aula25/pista.png"
       ]
     }
     roughness 1
