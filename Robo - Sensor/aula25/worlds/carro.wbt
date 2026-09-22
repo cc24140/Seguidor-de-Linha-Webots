@@ -7,8 +7,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.32190436028524155 0.28867312911624743 0.9016903056790528 1.7816683826494297
-  position 0.07824976233748532 -0.9373613413963789 0.9054063841376
+  orientation -0.43633888980803576 0.44571221611383893 0.7816322624149935 1.7940416703460433
+  position -0.02267387341270321 -1.5142612660061519 2.2174939485137246
 }
 TexturedBackground {
 }
@@ -19,20 +19,44 @@ RectangleArena {
   floorAppearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "../pista.png"
+        "../Design sem nome.png"
       ]
     }
+    roughness 1
+    metalness 0
   }
 }
 Robot {
-  translation -0.3724035385633781 1.4256086211601314e-09 0.044991783892603235
-  rotation 9.195983304641259e-09 -1 -1.1260510911249564e-08 -2.498540109413594
+  translation -0.008178277479050108 -0.10111948744469706 -9.04778289482956e-05
+  rotation -0.004693372867292352 -0.004674162647970813 0.9999780619866961 -1.4605060126598897
   children [
+    DistanceSensor {
+      translation 0.05 0.02 0.01
+      rotation 0 1 0 1.57
+      name "distance sensor left"
+      lookupTable [
+        0 0 0
+        0.1 10 0
+      ]
+      type "infra-red"
+      redColorSensitivity 0.5
+    }
+    DistanceSensor {
+      translation 0.0612439 -0.02 0.01
+      rotation 0 1 0 1.57
+      name "distance sensor right"
+      lookupTable [
+        0 0 0
+        0.1 10 0
+      ]
+      type "infra-red"
+      redColorSensitivity 0.5
+    }
     Pose {
       children [
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -402.46165509232077
+            position 1470.1645034011112
             axis 0 1 0
             anchor 0 0 0.025
           }
@@ -44,8 +68,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.008285715860887971 -2.155234625656306e-09 0.0014113307409567531
-            rotation -2.404555933158646e-07 -0.9999999999999702 -4.100301542262059e-08 0.33779537011242594
+            translation 0.002518757409190829 5.503166750073182e-05 0.00013048435426002772
+            rotation 0 -1 0 0.10085847891200149
             children [
               DEF RodaE Pose {
                 translation 0 0.055 0.025
@@ -53,9 +77,12 @@ Robot {
                 children [
                   Shape {
                     appearance PBRAppearance {
-                      baseColor 1 0.3 1
+                      baseColorMap ImageTexture {
+                        url [
+                          "../gato.jpeg"
+                        ]
+                      }
                       roughness 1
-                      metalness 0
                     }
                     geometry Cylinder {
                       height 0.01
@@ -69,13 +96,13 @@ Robot {
             physics Physics {
               mass 0.05
             }
-            linearVelocity 9.591301146559254e-05 -2.0409792215733867e-15 3.5636160298230434e-08
-            angularVelocity -4.42448285276519e-11 0.0038365956501317713 1.9109126613249123e-10
+            linearVelocity 0.00013612323272970826 -0.0012914298955342314 -1.4692189839864293e-07
+            angularVelocity 0.04903611007412365 0.005037310218229034 0.012510971253680045
           }
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -402.4616550920747
+            position 2771.2648326987
             axis 0 1 0
             anchor 0 0 0.025
           }
@@ -87,8 +114,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.008285715855083385 2.1568908366022527e-09 0.001411330738917891
-            rotation 2.4047551364840396e-07 -0.9999999999999702 4.100641222709564e-08 0.33779536987523523
+            translation -0.009253293894174841 5.048143910141251e-05 0.002047044143021117
+            rotation -0.010705443411585521 -0.9999343907128638 0.00407526085733365 5.903037226979022
             children [
               DEF RodaD Pose {
                 translation 0 -0.055 0.025
@@ -96,9 +123,12 @@ Robot {
                 children [
                   Shape {
                     appearance PBRAppearance {
-                      baseColor 1 0.3 1
+                      baseColorMap ImageTexture {
+                        url [
+                          "../gato.jpeg"
+                        ]
+                      }
                       roughness 1
-                      metalness 0
                     }
                     geometry Cylinder {
                       height 0.01
@@ -114,8 +144,8 @@ Robot {
               density -1
               mass 0.05
             }
-            linearVelocity 9.591300493868404e-05 2.72198958283911e-13 3.5627121697245667e-08
-            angularVelocity 3.339942328414391e-11 0.0038365956498061355 -1.1082937134273422e-10
+            linearVelocity 0.00028850944243434003 -0.0026815401342889784 1.9916793803559223e-07
+            angularVelocity 0.396924625753999 0.04342054987575245 0.012680428783924873
           }
         }
         DEF Corpo Pose {
@@ -123,9 +153,11 @@ Robot {
           children [
             Shape {
               appearance PBRAppearance {
-                baseColor 1 0.7 0.4
-                roughness 1
-                metalness 0
+                baseColorMap ImageTexture {
+                  url [
+                    "../gato.jpeg"
+                  ]
+                }
               }
               geometry Box {
                 size 0.1 0.1 0.05
@@ -142,6 +174,11 @@ Robot {
                 Shape {
                   appearance PBRAppearance {
                     baseColor 0.8 0.4 0.5
+                    baseColorMap ImageTexture {
+                      url [
+                        "../gato.jpeg"
+                      ]
+                    }
                     roughness 1
                     metalness 0
                   }
@@ -166,8 +203,11 @@ Robot {
   ]
   physics Physics {
     mass 0.05
+    centerOfMass [
+      0 0 0
+    ]
   }
   controller "car_control"
-  linearVelocity 0.019978027930573117 2.346618992756313e-10 0.015412696104610877
-  angularVelocity -2.332357821122068e-08 1.0038365957397188 1.481115794733046e-08
+  linearVelocity 0.00022002425916024337 -0.0019912578000899155 -2.058279287805191e-05
+  angularVelocity -0.0006625996970614829 -0.00044516934904755115 0.012486161465764221
 }
