@@ -19,7 +19,7 @@ RectangleArena {
   floorAppearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "../Design sem nome.png"
+        "../pista.png"
       ]
     }
     roughness 1
